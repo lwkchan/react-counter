@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import App from './App';
+import App from '../App';
 
-import Count from './components/Count';
-import ControlBoard from './components/ControlBoard'
+import Count from '../components/Count';
+import ControlBoard from '../components/ControlBoard'
 
 Enzyme.configure({ adapter: new Adapter() });
 
