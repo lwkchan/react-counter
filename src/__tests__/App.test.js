@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import renderer from 'react-test-renderer';
 import App from '../App';
 
 import Count from '../components/Count';
@@ -15,6 +16,11 @@ describe('App', () => {
     ReactDOM.render(<App />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
+
+  it('renders correctly', () => {
+    const tree = renderer.create(<App/>).toJSON();
+    expect(tree).toMatchSnapshot();
+  })
 
   it('renders with one count component', () => {
     const wrapper = shallow(<App/>);
